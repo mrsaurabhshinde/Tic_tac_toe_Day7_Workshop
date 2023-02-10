@@ -39,18 +39,24 @@ public class Main {
         UC3ShowBoard();
         System.out.println("Enter a slot number to Enter "+playLetter);
         int input = sc.nextInt();
+        if(board[input].equals(String.valueOf(input))) {
 
-        switch (input) {
-            case 1, 2, 3, 4, 5, 6, 7, 8, 9:
-                board[input] = playLetter;
-                UC3ShowBoard();
-                break;
-            default:
-                System.out.println("Invalid slot Number. please Enter valid slot Number");
-                UC4();
-                break;
+            switch (input) {
+                case 1, 2, 3, 4, 5, 6, 7, 8, 9:
+                    board[input] = playLetter;
+                    UC3ShowBoard();
+                    break;
+                default:
+                    System.out.println("Invalid slot Number. please Enter valid slot Number");
+                    UC4();
+                    break;
 
+            }
+        } else{
+            System.out.println("Slot already used");
+            UC4();
         }
+        UC4();
 
 
     }
